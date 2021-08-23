@@ -1,9 +1,9 @@
 <div class="topnav">
   <span class="logo" routerLink="/">GameReviewApp</span>
   <div class="search-container">
-    <form action="/action_page.php">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit">Search</button>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+      <input type="text" id="myInput" placeholder="Search Games" ngModel name="search">
+      <button type="submit" onclick="document.getElementById('myInput').value = ''">Search</button>
     </form>
   </div>
   <a routerLink="/movies">Movies</a>
