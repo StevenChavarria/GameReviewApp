@@ -9,6 +9,7 @@ export interface Game {
     metacritic: number;
     genres: Array<Genre>;
     parent_platforms: Array<ParentPlatform>;
+    ratings: Array<Rating>;
     publishers: Array<Publishers>;
 }
 
@@ -25,6 +26,12 @@ interface ParentPlatform {
         name: string;
     };
 }
+
+interface Rating {
+    id: number;
+    count: number;
+    title: string;
+  }
 
 interface Publishers {
     name: string;
