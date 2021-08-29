@@ -3,7 +3,7 @@
   <div class="search-container">
     <form #form="ngForm" (ngSubmit)="onSubmit(form)">
       <input type="text" id="myInput" placeholder="Search Games" ngModel name="search">
-      <button type="submit" onclick="document.getElementById('myInput').value = ''">Search</button>
+      <button type="submit" onclick="document.getElementById('myInput').value = ''"><img src="assets/images/search-icon-white.png"></button>
     </form>
   </div>
   <a routerLink="/movies">Movies</a>
