@@ -1,10 +1,13 @@
+<!DOCTYPE html>
+<html>
+
 <div class="container">
   <div class="card">
-    <img src="{{ game.background_image }}" class="card-img-top" alt="game image">
+    <img [src]="game?.background_image" class="card-img-top" alt="game image">
     <div class="card-img-overlay">
-      <h1 class="card-title hero-text">{{ game.name }}</h1>
+      <h1 class="card-title hero-text">{{ game?.name }}</h1>
       <div>
-        <i class="score" data-placement="bottom" title="Metacritic Score"> {{ game.metacritic }} </i>
+        <i class="score" data-placement="bottom" title="Metacritic Score"> {{ game?.metacritic }} </i>
       </div>
     </div>
   </div>
@@ -12,31 +15,33 @@
     <div class="card-header"> Game Description </div>
     <div class="card-body">
       <p>
-       <strong>Release: </strong>{{ game.released | date }}
+        <strong>Release: </strong>{{ game?.released | date }}
       </p>
       <p>
-       <strong>Platforms: </strong>
-        <span *ngFor="let game of game.parent_platforms; let last = last">{{ game.platform.name }}<span *ngIf="!last">,
+        <strong>Platforms: </strong>
+        <span *ngFor="let game of game?.parent_platforms; let last = last">{{ game?.platform?.name }}<span *ngIf="!last">,
           </span></span>
       </p>
       <p>
         <strong>Genre(s): </strong>
-        <span *ngFor="let genre of game.genres; let last = last">{{ genre.name }}<span *ngIf="!last">, </span></span>
+        <span *ngFor="let genre of game?.genres; let last = last">{{ genre?.name }}<span *ngIf="!last">, </span></span>
       </p>
       <p>
-       <strong>Publishers: </strong>
-       <span *ngFor="let publisher of game.publishers; let last = last">{{ publisher.name }}<span *ngIf="!last">,
-       </span></span>
+        <strong>Publishers: </strong>
+        <span *ngFor="let publisher of game?.publishers; let last = last">{{ publisher?.name }}<span *ngIf="!last">,
+          </span></span>
       </p>
       <p>
-       <strong>Website: </strong>
-        <a href="{{ game.website }}" target="_blank">{{ game.website }}</a>
+        <strong>Website: </strong>
+        <a href="{{ game?.website }}" target="_blank">{{ game?.website }}</a>
       </p>
       <p>
-       <strong>Metacritic Score:</strong> {{ game.metacritic }}
+        <strong>Metacritic Score:</strong> {{ game?.metacritic }}
       </p>
-      <p class="card-text" [innerHtml]="game.description"></p>
+      <p class="card-text" [innerHtml]="game?.description"></p>
       <div #pieChart class="pie-chart"></div>
     </div>
   </div>
 </div>
+
+</html>

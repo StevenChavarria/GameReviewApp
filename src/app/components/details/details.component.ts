@@ -1,4 +1,4 @@
-import { AfterViewInit, ViewChild } from '@angular/core';
+import { AfterViewInit, HostListener, ViewChild } from '@angular/core';
 import { ElementRef } from '@angular/core';
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
@@ -19,7 +19,12 @@ export class DetailsComponent implements OnInit, OnDestroy, AfterViewInit {
   gameSub: Subscription | undefined;
 
   @ViewChild('pieChart')
-  pieChart!: ElementRef; 
+  pieChart!: ElementRef;
+
+  @HostListener('window:resize', ['$event'])
+  onWindowResize(event: any) {
+    this.drawchart(this.gameId);
+  }
 
   constructor(private activatedRoute: ActivatedRoute, private gamesService: GamesService) { }
 
@@ -38,24 +43,25 @@ export class DetailsComponent implements OnInit, OnDestroy, AfterViewInit {
 
   drawchart(id: string): void {
     this.gameSub = this.gamesService.getGameDetails(id).subscribe((gameResp: Game) => {
-    const data = google.visualization.arrayToDataTable([
+      const data = google.visualization.arrayToDataTable([
         ['Title', 'Count'],
         [gameResp.ratings[0].title, gameResp.ratings[0].count],
         [gameResp.ratings[1].title, gameResp.ratings[1].count],
         [gameResp.ratings[2].title, gameResp.ratings[2].count],
         [gameResp.ratings[3].title, gameResp.ratings[3].count],
       ]);
-    const options = {
-      title: 'Videogame Ratings',
-      legend: { position: 'top' },
-      is3D: true,
-    };
+      const options = {
+        title: 'Videogame Ratings',
+        legend: { position: 'top' },
+        is3D: true
+      };
 
-    const chart = new google.visualization.PieChart(this.pieChart.nativeElement);
+      const chart = new google.visualization.PieChart(this.pieChart.nativeElement);
 
-    chart.draw(data, options);
-  });
+      chart.draw(data, options);
+    });
   }
+
 
   ngOnDestroy(): void {
     if (this.gameSub) {
@@ -72,3 +78,5 @@ export class DetailsComponent implements OnInit, OnDestroy, AfterViewInit {
     google.charts.setOnLoadCallback(this.drawchart(this.gameId));
   }
 }
+
+

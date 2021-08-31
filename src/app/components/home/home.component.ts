@@ -11,7 +11,6 @@ import { GamesService } from 'src/app/services/games.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit, OnDestroy {
-  public sort: string | undefined;
   public games: Array<Game> | undefined;
   private routeSub: Subscription | undefined;
   private gameSub: Subscription | undefined;
