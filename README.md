@@ -1,27 +1,47 @@
 # Gamereviewapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.1.2.
+As a passionate about video games, I like to know the ratings of these to make the best decisions when buying one and what better way to see those ratings on a website that shows the ratings of 350,000+ video games as well as details of them such as release date, description, Metacritic score, platforms, among others. This website also has a section of movies and login that I'm looking to include in the future.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Information about the Project
+This project use:
 
-## Code scaffolding
+- Angular CLI (https://github.com/angular/angular-cli) version 12.1.2.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- RAWG Video Games Database API: https://rawg.io/apidocs
 
-## Build
+- Google charts https://developers.google.com/chart
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Rxjs https://rxjs.dev/ version 6.6.0. 
 
-## Running unit tests
+- Bootstrap https://getbootstrap.com/ 5.1.0.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## How to run
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `npm install` to install the required dependencies
 
-## Further help
+Run `ng serve` for a dev server and navigate to `http://localhost:4200/`.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Screenshots
+
+Main page
+
+![Main page](src/assets/screenshots/main-page.jpg)
+
+Details page
+
+![details](src/assets/screenshots/details1.jpg)
+
+![details](src/assets/screenshots/details2.jpg)
+
+Search example
+
+![details](src/assets/screenshots/search.jpg)
+
+
+## Use of Azure DevOps for CI
+
+Azure Devops Organization (Public project): https://dev.azure.com/SteveOps/GameReviewAppProject/_build
+
