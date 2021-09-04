@@ -9,14 +9,10 @@ steps:
     versionSpec: '12.x'
   displayName: 'Install Node.js'
 
-- task: Npm@1
-  inputs:
-      command: 'install'
-  
-- task: Npm@1
-  inputs:
-    command: 'custom'
-    customCommand: 'run build'
+- script: |
+    npm install -g @angular/cli
+    npm install
+    ng build 
  
 - task: ArchiveFiles@2
   inputs:
