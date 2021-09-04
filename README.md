@@ -38,10 +38,11 @@ Details page
 
 Search example
 
-![details](src/assets/screenshots/search.jpg)
+![search](src/assets/screenshots/search.jpg)
 
 
 ## Use of Azure DevOps for CI
 
 Azure Devops Organization (Public project): https://dev.azure.com/SteveOps/GameReviewAppProject/_build
 
+![azure devops](src/assets/screenshots/azure-devops.jpg)
